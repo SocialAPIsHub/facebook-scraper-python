@@ -1,11 +1,15 @@
 # facebook-scraper-python
 
+[![PyPI](https://badge.fury.io/py/socialapis-sdk.svg)](https://pypi.org/project/socialapis-sdk/)
+[![Python versions](https://img.shields.io/pypi/pyversions/socialapis-sdk)](https://pypi.org/project/socialapis-sdk/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
 > Modern Python alternative to [`kevinzg/facebook-scraper`](https://github.com/kevinzg/facebook-scraper) — the 9.5k-star library that's been **abandoned since 2022**. Hosted backend means it doesn't break every time Meta changes their HTML.
 
-This repo is a **migration landing page** + working examples. The actual SDK lives at [`SocialAPIsHub/socialapis-python`](https://github.com/SocialAPIsHub/socialapis-python) and ships as the `socialapis` package on PyPI.
+This repo is a **migration landing page** + working examples. The actual SDK lives at [`SocialAPIsHub/socialapis-python`](https://github.com/SocialAPIsHub/socialapis-python) and ships as the `socialapis-sdk` package on PyPI.
 
 ```bash
-pip install socialapis
+pip install socialapis-sdk
 ```
 
 ```python
