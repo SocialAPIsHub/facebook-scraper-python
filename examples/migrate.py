@@ -6,7 +6,7 @@ The shape stays familiar — `FacebookScraper` is an exact alias of
 Run this:
     1. Sign up free at https://socialapis.io/auth/signup
     2. export SOCIALAPIS_TOKEN="<paste your token from the dashboard>"
-    3. pip install socialapis
+    3. pip install socialapis-sdk
     4. python examples/migrate.py
 """
 
