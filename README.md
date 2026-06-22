@@ -17,7 +17,7 @@ from socialapis import FacebookScraper
 
 fb = FacebookScraper(api_token="...")           # alias of Facebook — keeps your import line greppable
 page = fb.get_page_info("EngenSA")
-print(page.name, page.likes, page.category)
+print(page.title, page.followers_count, page.category)
 
 for post in fb.get_page_posts("EngenSA").get("posts", []):
     print(post["text"][:80])
@@ -59,7 +59,7 @@ from socialapis import FacebookScraper          # alias of Facebook
 
 fb = FacebookScraper(api_token="...")
 page = fb.get_page_info("EngenSA")
-print(page.name, page.likes)                    # typed Pydantic model, IDE autocomplete
+print(page.title, page.likes_count)             # typed Pydantic model, IDE autocomplete
 
 for post in fb.get_page_posts("EngenSA").get("posts", []):
     print(post.get("time"), post.get("text", "")[:80])

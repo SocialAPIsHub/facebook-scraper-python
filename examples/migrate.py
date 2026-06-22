@@ -56,11 +56,17 @@ def main() -> None:
                 "Out of credits. Upgrade at https://socialapis.io/pricing"
             ) from None
 
-        # Same fields kevinzg returned, but typed — page.name not page["name"]
-        print(f"Page: {page.name}")
-        print(f"  Category: {page.category}")
-        print(f"  Likes:    {page.likes:,}" if page.likes else "  Likes:    n/a")
-        print(f"  Verified: {page.verified}")
+        # Same data kevinzg returned, but typed — page.title not page["name"].
+        # Field names match the real API exactly (see PageInfo in the SDK docs).
+        print(f"Page: {page.title}")
+        print(f"  Category:  {page.category}")
+        print(f"  Likes:     {page.likes_count:,}" if page.likes_count else "  Likes:     n/a")
+        print(
+            f"  Followers: {page.followers_count:,}"
+            if page.followers_count
+            else "  Followers: n/a"
+        )
+        print(f"  Bio:       {(page.bio or '')[:80]}")
 
         # kevinzg's `for post in get_posts(...)` equivalent —
         # paginate via cursors instead of `pages=N`.
