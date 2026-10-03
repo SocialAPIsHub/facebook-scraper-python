@@ -142,9 +142,9 @@ One credit per successful call. Failed calls (4xx caused by bad input) don't con
 ## Other resources
 
 - **Full SDK source + docs**: [SocialAPIsHub/socialapis-python](https://github.com/SocialAPIsHub/socialapis-python)
-- **Instagram alternative** to [`arc298/instagram-scraper`](https://github.com/arc298/instagram-scraper): [SocialAPIsHub/instagram-scraper-python](https://github.com/SocialAPIsHub/instagram-scraper-python) (coming soon)
+- **Instagram alternative** to [`arc298/instagram-scraper`](https://github.com/arc298/instagram-scraper): [SocialAPIsHub/instagram-scraper-python](https://github.com/SocialAPIsHub/instagram-scraper-python)
 - **Hosted API docs**: [docs.socialapis.io](https://docs.socialapis.io)
-- **Endpoint catalog (50+ endpoints)**: [socialapis.io/api-sources](https://socialapis.io/api-sources)
+- **Endpoint catalog (50 endpoints)**: [socialapis.io/api-sources](https://socialapis.io/api-sources)
 - **Status page**: [socialapis.io/status](https://socialapis.io/status)
 - **Telegram (fastest support)**: [t.me/socialapis](https://t.me/socialapis)
 - **Email**: [support@socialapis.io](mailto:support@socialapis.io)
