@@ -1,0 +1,69 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "facebook-scraper-api"
+dynamic = ["version"]
+description = "Facebook scraper API for Python: public Pages, posts, groups, reels, comments and search, with no login, cookies or browser. facebook-scraper style functions."
+readme = "PACKAGE.md"
+requires-python = ">=3.10"
+authors = [{ name = "SocialAPIs", email = "pypi@socialapis.io" }]
+license = { text = "MIT" }
+keywords = [
+    "facebook-scraper",
+    "facebook-scraper-api",
+    "facebook-api",
+    "facebook-posts",
+    "facebook-pages",
+    "facebook-groups",
+    "facebook-comments",
+    "scraping",
+    "social-media",
+    "socialapis",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Internet :: WWW/HTTP",
+    "Typing :: Typed",
+]
+dependencies = ["socialapis-sdk>=0.1.3"]
+
+[project.scripts]
+facebook-scraper-api = "facebook_scraper_api.cli:main"
+
+[project.urls]
+Homepage = "https://socialapis.io"
+Documentation = "https://socialapis.io/api-sources/facebook-page-posts"
+Pricing = "https://socialapis.io/pricing"
+"Free follower count tool" = "https://socialapis.io/tools/facebook-follower-count"
+Repository = "https://github.com/SocialAPIsHub/facebook-scraper-python"
+Issues = "https://github.com/SocialAPIsHub/facebook-scraper-python/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.hatch.version]
+path = "facebook_scraper_api/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["facebook_scraper_api"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/facebook_scraper_api", "/tests", "/PACKAGE.md", "/LICENSE"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+extend-exclude = ["examples/"]
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "UP", "B", "SIM"]
