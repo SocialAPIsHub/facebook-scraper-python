@@ -1,0 +1,38 @@
+name: Release
+
+# Tag `vX.Y.Z` publishes facebook-scraper-api to PyPI with trusted publishing (no token).
+#
+# Once: pypi.org → Your account → Publishing → Add a pending publisher:
+#   PyPI project facebook-scraper-api, owner SocialAPIsHub,
+#   repository facebook-scraper-python, workflow release.yml, environment pypi.
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  pypi:
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/project/facebook-scraper-api/
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install build
+      - run: python -m build
+      - name: Version matches tag
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          version=$(python -c "import re;print(re.search(r'__version__ = \"(.+)\"', open('facebook_scraper_api/__init__.py').read()).group(1))")
+          test "$tag" = "$version" || { echo "::error::tag $tag != version $version"; exit 1; }
+      - uses: pypa/gh-action-pypi-publish@release/v1

@@ -1,27 +1,34 @@
 # facebook-scraper-python
 
+[![facebook-scraper-api on PyPI](https://img.shields.io/pypi/v/facebook-scraper-api?label=facebook-scraper-api&logo=pypi&logoColor=white)](https://pypi.org/project/facebook-scraper-api/)
 [![PyPI](https://img.shields.io/pypi/v/socialapis-sdk?cacheSeconds=300&label=PyPI&logo=pypi&logoColor=white)](https://pypi.org/project/socialapis-sdk/)
 [![Python versions](https://img.shields.io/pypi/pyversions/socialapis-sdk)](https://pypi.org/project/socialapis-sdk/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 > Modern Python alternative to [`kevinzg/facebook-scraper`](https://github.com/kevinzg/facebook-scraper) — the 9.5k-star library that's been **abandoned since 2022**. Hosted backend means it doesn't break every time Meta changes their HTML.
 
-This repo is a **migration landing page** + working examples. The actual SDK lives at [`SocialAPIsHub/socialapis-python`](https://github.com/SocialAPIsHub/socialapis-python) and ships as the `socialapis-sdk` package on PyPI.
+This repo ships the **`facebook-scraper-api`** package: the same function names as `facebook-scraper` (`get_page_info`, `get_posts(account, pages=…)`, `get_group_info`, `get_comments`…), backed by a hosted API. It also has a command line tool.
 
 ```bash
-pip install socialapis-sdk
+pip install facebook-scraper-api
+export SOCIALAPIS_TOKEN=your_key
 ```
 
 ```python
-from socialapis import FacebookScraper
+from facebook_scraper_api import get_page_info, get_posts
 
-fb = FacebookScraper(api_token="...")           # alias of Facebook — keeps your import line greppable
-page = fb.get_page_info("EngenSA")
-print(page.title, page.followers_count, page.category)
+page = get_page_info("EngenSA")
+print(page["title"], page["followers_count"])
 
-for post in fb.get_page_posts("EngenSA").get("posts", []):
-    print(post["text"][:80])
+for post in get_posts("EngenSA", pages=2):      # follows the cursor, 1 call per page
+    print(post)
 ```
+
+```bash
+facebook-scraper-api posts EngenSA --pages 3 --limit 9 --out posts.csv
+```
+
+All functions, options and costs: [PACKAGE.md](PACKAGE.md). Need Instagram, Marketplace, the Ads Library or async too? The full SDK lives at [`SocialAPIsHub/socialapis-python`](https://github.com/SocialAPIsHub/socialapis-python) (`pip install socialapis-sdk`), and the rest of this page shows the migration with it.
 
 **[Get a free API token →](https://socialapis.io/auth/signup)** — 200 calls/month, no credit card
 
