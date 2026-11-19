@@ -132,7 +132,7 @@ Full method list + Pydantic response types: [main SDK README →](https://github
 | **Pagination** | Generator with edge-case bugs | Cursor-based; API decides page size |
 | **Error handling** | Generic exceptions | Typed hierarchy (`RateLimitError`, `InsufficientCreditsError`, …) |
 | **Tests** | Manual against live FB | Recorded HTTP fixtures, Python 3.10–3.13 |
-| **Surface area** | Page posts, group posts | 35+ Facebook endpoints + Instagram + Account |
+| **Surface area** | Page posts, group posts | 37 Facebook endpoints + 13 Instagram + Account |
 
 ## Pricing
 
@@ -163,7 +163,7 @@ Options: `?theme=dark`, `?style=flat`, `?label=Your%20text`. Get the HTML, Markd
 - **Full SDK source + docs**: [SocialAPIsHub/socialapis-python](https://github.com/SocialAPIsHub/socialapis-python)
 - **Instagram alternative** to [`arc298/instagram-scraper`](https://github.com/arc298/instagram-scraper): [SocialAPIsHub/instagram-scraper-python](https://github.com/SocialAPIsHub/instagram-scraper-python)
 - **Hosted API docs**: [docs.socialapis.io](https://docs.socialapis.io)
-- **Endpoint catalog (50 endpoints)**: [socialapis.io/api-sources](https://socialapis.io/api-sources)
+- **Endpoint catalog (53 endpoints)**: [socialapis.io/api-sources](https://socialapis.io/api-sources)
 - **Status page**: [socialapis.io/status](https://socialapis.io/status)
 - **Telegram (fastest support)**: [t.me/socialapis](https://t.me/socialapis)
 - **Email**: [support@socialapis.io](mailto:support@socialapis.io)
